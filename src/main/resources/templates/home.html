@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    <title>home</title>
+</head>
+<body>
+<section class="banner d-flex justify-content-center align-items-center">
+  <div class="text-center">
+      <h1 class="font-weight-bold"> Employee Management System</h1>
+
+      <p>"Designed to help <br>
+          employers efficiently store, organize, and manage their employees' <br>
+          information. With ability to add and edit contact details, categorize contacts into groups, <br>
+          ,search for specific contacts, our app makes it easy to streamline
+          communication and relationship management efforts. Built with advanced <br>
+          technologies and frameworks, our app is reliable, secure, and accessible
+          from multiple devices. Our team is dedicated to providing the best possible <br>
+          experience for our users and is constantly working to improve and expand our
+          app's capabilities. Thank you for choosing our management application."
+      </p>
+      <button class="btn btn-lg btn-primary" style="font-weight: bold" ><a th:href="@{/signin}" style="color: white">Get Started</a></button>
+  </div>
+</section>
+</body>
+</html>
