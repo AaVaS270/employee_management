@@ -1,5 +1,4 @@
-console.log("this is script file");
-
+// console.log("this is script file");
 const toggleSidebar =()=> {
     if($('.sidebar').is(':visible')){
 
@@ -12,5 +11,27 @@ const toggleSidebar =()=> {
 };
 
 const search=()=>{
-    console.log("searching...")
-}
+    // console.log("searching...")
+    let query=$("#search-input").val();
+    if(query==""){
+        $(".search-result").hide();
+    }else{
+        // console.log(query);
+        let url = `http://localhost:8282/search/${query}`;
+
+        fetch(url).
+        then((response) => {
+            return response.json();
+        }).then((data)=>{
+            // data
+            // console.log(data);
+            let text = `<div class="list-group">`
+            data.forEach((contact)=>{
+                text += `<a href="/user/${contact.id}/contacts/" class="list-group-item list-group-item-action"> ${contact.name} </a>`
+            });
+            text+=`</div>`;
+            $(".search-result").html(text);
+            $(".search-result").show();
+        });
+    }
+};

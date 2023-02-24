@@ -11,10 +11,10 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface ContactRepository extends JpaRepository<contact,Integer> {
-//    pagination..
+    //    pagination..
     @Query("from contact as c where c.user.id =:userId")
     public Page<contact> findContactsByUser(@Param("userId") Integer userId, Pageable pePagable);
 
-//    search
+    //    search
     public List<contact> findByNameContainingAndUser(String name, User user);
 }
